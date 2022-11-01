@@ -80,7 +80,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: pet_rescue_production
-  username: pet_rescue
-  password: <%= ENV["PET_RESCUE_DATABASE_PASSWORD"] %>
+<<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  # <<: *default
+  # database: pet_rescue_production
+  # username: pet_rescue
+  # password: <%= ENV["PET_RESCUE_DATABASE_PASSWORD"] %>
